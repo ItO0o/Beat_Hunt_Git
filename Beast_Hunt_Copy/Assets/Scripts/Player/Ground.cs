@@ -11,7 +11,7 @@ public class Ground : MonoBehaviour
     }
     public void OnTriggerEnter(Collider c)
     {
-        if (c.name.Equals("Plane"))
+        if (c.name.Equals("Floor"))
         {
             this.transform.parent.GetComponent<Animator>().SetBool("Ground",true);
         }

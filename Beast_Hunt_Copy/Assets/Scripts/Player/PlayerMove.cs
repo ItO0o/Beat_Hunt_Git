@@ -78,10 +78,10 @@ public class PlayerMove : MonoBehaviour
             player.transform.Rotate(0, rotationCos * rotationSpeed, 0);
         }
 
-        if (rotationCos > 0.18f)
+        if (rotationCos > 0.08f)
         {
             this.GetComponent<Animator>().SetFloat("Turn", 1);
-        }else if (rotationCos < -0.18f)
+        }else if (rotationCos < -0.08f)
         {
             this.GetComponent<Animator>().SetFloat("Turn", -1);
         }else

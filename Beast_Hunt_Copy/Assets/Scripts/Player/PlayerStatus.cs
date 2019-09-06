@@ -76,7 +76,7 @@ public class PlayerStatus : MonoBehaviour {
         }
 
         if (!tempAnimator.IsName("WL_Attack_Bite_Left") && this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("WL_Attack_Bite_Left")) {
-            stamina -= 100;
+            stamina -= 200;
         }
 
         if (this.stamina < 0) {
@@ -86,7 +86,9 @@ public class PlayerStatus : MonoBehaviour {
             this.playerStatus = Status.non;
         }
 
-        stamina += 1;
+        if (stamina < maxStamina) {
+            stamina += 1;
+        }
 
         sliders[1].value = (float)stamina / (float)maxStamina;
 

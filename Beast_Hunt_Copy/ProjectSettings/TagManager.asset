@@ -7,6 +7,7 @@ TagManager:
   - Fly
   - Water
   - Animal
+  - NatureObj
   layers:
   - Default
   - TransparentFX
