@@ -11,9 +11,10 @@ public class Ground : MonoBehaviour
     }
     public void OnTriggerEnter(Collider c)
     {
-        if (c.name.Equals("Floor"))
+        if (c.name.Equals("Floor_Terrain"))
         {
             this.transform.parent.GetComponent<Animator>().SetBool("Ground",true);
+            this.transform.parent.GetComponent<PlayerMove>().currentAction = PlayerMove.Action.non;
         }
     }
 

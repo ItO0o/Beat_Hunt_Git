@@ -34,6 +34,17 @@ public class PlayerMove : MonoBehaviour
     private bool[] key;
 
     PlayerStatus ps;
+    public Action currentAction;
+
+    GameObject runParticle;
+
+    public enum Action {
+        non,
+        Run,
+        Walk,
+        Jump,
+        Attack
+    }
     
     private void Start()
     {
@@ -41,18 +52,19 @@ public class PlayerMove : MonoBehaviour
         pointer = GameObject.Find("Pointer");
         key = new bool[keyCount];
         ps = this.GetComponent<PlayerStatus>();
+        runParticle = GameObject.Find("Run_Particle");
     }
 
     private void Update() {
         z = Input.GetAxis("MoveHorizontal");
         x = Input.GetAxis("MoveVertical");
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            this.GetComponent<Animator>().SetTrigger("Jump");
-        }
+        Jump();
+        RunEffect();
 
         if (Input.GetKeyDown(KeyCode.F)) {
             this.GetComponent<Animator>().SetTrigger("Attack");
+            currentAction = Action.Attack;
         }
     }
 
@@ -64,40 +76,67 @@ public class PlayerMove : MonoBehaviour
         moveVector = Vector3.Lerp(tempVector, moveVector, acceleration);
         
         if (this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("WL_Attack_Bite_Left") || ps.playerStatus == PlayerStatus.Status.Stan) {
-            moveVector = Vector3.zero;
-            tempVector = Vector3.zero;
-            this.GetComponent<Animator>().SetFloat("Speed",0);
+            Stop();
             return;
         }
 
         player.velocity = new Vector3(moveVector.x  * maxSpeed, player.velocity.y, moveVector.z * maxSpeed);
 
-        float rotationCos = Vector3.Dot(new Vector3(moveVector.x, 0, moveVector.z), new Vector3(player.transform.right.x, 0, player.transform.right.z));
+        PlayerRotation();
+        PlayerUpdatePostion();
 
+        tempVector = moveVector;
+    }
+
+    void Jump() {
+        if (Input.GetKeyDown(KeyCode.Space) && currentAction != Action.Jump) {
+            this.GetComponent<Animator>().SetTrigger("Jump");
+            this.GetComponent<PlayerStatus>().stamina -= 50;
+            currentAction = Action.Jump;
+        }
+    }
+
+    void Stop() {
+        moveVector = Vector3.zero;
+        tempVector = Vector3.zero;
+        this.GetComponent<Animator>().SetFloat("Speed", 0);
+    }
+
+    void PlayerRotation() {
+        float rotationCos = Vector3.Dot(new Vector3(moveVector.x, 0, moveVector.z), new Vector3(player.transform.right.x, 0, player.transform.right.z));
         if (rotationCos != 0) {
             player.transform.Rotate(0, rotationCos * rotationSpeed, 0);
         }
-
-        if (rotationCos > 0.08f)
-        {
+        if (rotationCos > 0.08f) {
             this.GetComponent<Animator>().SetFloat("Turn", 1);
-        }else if (rotationCos < -0.08f)
-        {
+        } else if (rotationCos < -0.08f) {
             this.GetComponent<Animator>().SetFloat("Turn", -1);
-        }else
-        {
+        } else {
             this.GetComponent<Animator>().SetFloat("Turn", 0);
         }
+    }
 
-        if (this.GetComponent<Rigidbody>().velocity.magnitude > 0.2f)
-        {
+    void PlayerUpdatePostion() {
+        if (this.GetComponent<Rigidbody>().velocity.magnitude > 0.4f) {
+            if (this.GetComponent<Rigidbody>().velocity.magnitude / 10 > 0.3f) {
+                currentAction = Action.Run;
+            } else {
+                currentAction = Action.Walk;
+            }
             this.GetComponent<Animator>().SetFloat("Speed", this.GetComponent<Rigidbody>().velocity.magnitude / 10);
-        }
-        else
-        {
+        } else {
             this.GetComponent<Animator>().SetFloat("Speed", 0);
         }
+    }
 
-        tempVector = moveVector;
+    void RunEffect() {
+        if (currentAction == Action.Run) {
+            //runParticle.SetActive(true);
+            runParticle.GetComponent<ParticleSystem>().emissionRate = 5;
+        } else {
+            //runParticle.SetActive(false);
+            runParticle.GetComponent<ParticleSystem>().emissionRate = 0;
+
+        }
     }
 }
