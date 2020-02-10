@@ -18,7 +18,7 @@ public class PlayerStatus : MonoBehaviour {
 
     private Slider[] sliders;
 
-    public float stanStamina,healStan;
+    public float stanStamina, healStan;
 
     private AnimatorStateInfo tempAnimator;
     public enum Status {
@@ -48,11 +48,11 @@ public class PlayerStatus : MonoBehaviour {
 
     private void Update() {
         HungrySystem();
-        StanAction();
     }
 
     private void FixedUpdate() {
         StaminaSystem();
+        StanAction();
     }
 
     void HungrySystem() {
@@ -60,7 +60,7 @@ public class PlayerStatus : MonoBehaviour {
 
         if (timeElapsed[0] >= timeOut[0] && this.playerStatus == Status.non) {
             // Do anything
-            hungryDegree -= 1; 
+            hungryDegree -= 1;
             timeElapsed[0] -= timeOut[0];
         }
 
@@ -93,8 +93,9 @@ public class PlayerStatus : MonoBehaviour {
 
         if (this.stamina < stanStamina) {
             this.playerStatus = Status.Stan;
+            this.GetComponent<PlayerMove>().currentAction = PlayerMove.Action.non;
         }
-        if(this.stamina > healStan) {
+        if (this.stamina > healStan) {
             this.playerStatus = Status.non;
         }
 
@@ -109,12 +110,12 @@ public class PlayerStatus : MonoBehaviour {
 
     float palLevel;
     bool palMode;
-    float palSpeed = 0.2f;
+    float palSpeed = 0.04f;
 
     void Palpitations() {
         if (palLevel < 0) {
             palMode = true;
-        } else if (palLevel > 1) {
+        } else if (palLevel > 0.2f) {
             palMode = false;
         }
 
@@ -129,7 +130,7 @@ public class PlayerStatus : MonoBehaviour {
         c.intensity.Override(palLevel);
 
         Vignette v = ScriptableObject.CreateInstance<Vignette>();
-        v.color.Override(new Color(0.65f,0.37f,0.37f));
+        v.color.Override(new Color(0.65f, 0.37f, 0.37f));
         v.enabled.Override(true);
         v.intensity.Override(palLevel);
 
@@ -148,8 +149,8 @@ public class PlayerStatus : MonoBehaviour {
         v.color.Override(new Color(0.65f, 0.37f, 0.37f));
         v.intensity.Override(palLevel);
         v.enabled.Override(true);
-        PostProcessEffectSettings[] p = {c,v};
+        PostProcessEffectSettings[] p = { c, v };
 
-        PostProcessVolume postProcessVolume = PostProcessManager.instance.QuickVolume(Camera.main.gameObject.layer, 0f,p);
+        PostProcessVolume postProcessVolume = PostProcessManager.instance.QuickVolume(Camera.main.gameObject.layer, 0f, p);
     }
 }

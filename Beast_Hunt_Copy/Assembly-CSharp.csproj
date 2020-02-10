@@ -63,6 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\IL3DN\Scripts\IL3DN_ChangeWalkingSound.cs" />
+    <Compile Include="Assets\IL3DN\Scripts\IL3DN_SimpleFPSController.cs" />
+    <Compile Include="Assets\IL3DN\Scripts\IL3DN_SimpleMouseLook.cs" />
+    <Compile Include="Assets\IL3DN\Scripts\IL3DN_Wind.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Materials &amp; Textures\MGameSettings.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Behaviours\AttackTriggerBehaviour.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Animal Controller\Behaviours\ModeBehaviour.cs" />
@@ -208,18 +212,21 @@
     <Compile Include="Assets\Scripts\Camera\CamFollow.cs" />
     <Compile Include="Assets\Scripts\Camera\PostEffect.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Player\Footprint.cs" />
     <Compile Include="Assets\Scripts\Player\Ground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
     <Compile Include="Assets\Scripts\World\EditFloor.cs" />
     <Compile Include="Assets\Scripts\World\SetTree.cs" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Mask4Realistic.shader" />
+    <None Include="Assets\IL3DN\Shaders\IL3DN_Pine.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Color4x3.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Mask4Toon.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\AnisotropicWard.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Mask8Toon.shader" />
     <None Include="Assets\Materials\Tree.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Color4x4v2.shader" />
+    <None Include="Assets\IL3DN\Shaders\IL3DN_Grass.shader" />
     <None Include="Assets\Malbers Animations\Common\Scripts\Water\Water.shader" />
     <None Include="Assets\Shader\monoTone.shader" />
     <None Include="Assets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
@@ -229,7 +236,9 @@
     <None Include="Assets\Malbers Animations\Common\Shaders\Color4x2.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Mask8Realistic.shader" />
     <None Include="Assets\Shader\mosaic.shader" />
+    <None Include="Assets\IL3DN\Shaders\IL3DN_OpaqueSurface.shader" />
     <None Include="Assets\Materials\Player.shader" />
+    <None Include="Assets\IL3DN\Shaders\IL3DN_Branch.shader" />
     <None Include="Assets\Malbers Animations\Common\Shaders\Color4x4.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/k17014kk/Unity/Beast_Hunt_Git/Beast_Hunt_Copy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

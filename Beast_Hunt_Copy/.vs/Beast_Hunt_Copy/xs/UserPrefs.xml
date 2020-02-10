@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{5A87E847-1B9D-233C-494D-91DFE6DE2256}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Ground.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Footprint.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemy/EnemyMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerStatus.cs" Line="25" Column="13" />
-      <File FileName="Assets/Scripts/Player/PlayerMove.cs" Line="62" Column="10" />
-      <File FileName="Assets/Scripts/World/SetTree.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/World/EditFloor.cs" Line="28" Column="14" />
-      <File FileName="Assets/Scripts/Camera/PostEffect.cs" Line="21" Column="42" />
-      <File FileName="Assets/Shader/mosaic.shader" Line="13" Column="34" />
-      <File FileName="Assets/Shader/emphasisEnemy.shader" Line="33" Column="40" />
-      <File FileName="Assets/VertexColorFarmAnimals/Shaders/VertexColorUnlit.shader" Line="1" Column="1" />
-      <File FileName="Assets/Shader/monoTone.shader" Line="4" Column="50" />
-      <File FileName="Assets/Scripts/Player/Ground.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerStatus.cs" />
+      <File FileName="Assets/Scripts/Player/PlayerMove.cs" Line="140" Column="1" />
+      <File FileName="Assets/Scripts/World/SetTree.cs" />
+      <File FileName="Assets/Scripts/World/EditFloor.cs" />
+      <File FileName="Assets/Scripts/Camera/PostEffect.cs" />
+      <File FileName="Assets/Shader/mosaic.shader" />
+      <File FileName="Assets/Shader/emphasisEnemy.shader" />
+      <File FileName="Assets/VertexColorFarmAnimals/Shaders/VertexColorUnlit.shader" />
+      <File FileName="Assets/Shader/monoTone.shader" />
+      <File FileName="Assets/Scripts/Player/Ground.cs" />
+      <File FileName="Assets/Scripts/Player/Footprint.cs" Line="43" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +23,7 @@
                 <Node name="Camera" expanded="True" />
                 <Node name="Enemy" expanded="True" />
                 <Node name="Player" expanded="True">
-                  <Node name="Ground.cs" selected="True" />
+                  <Node name="Footprint.cs" selected="True" />
                 </Node>
                 <Node name="World" expanded="True" />
               </Node>

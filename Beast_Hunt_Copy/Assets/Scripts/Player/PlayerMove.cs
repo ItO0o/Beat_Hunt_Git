@@ -118,7 +118,7 @@ public class PlayerMove : MonoBehaviour
 
     void PlayerUpdatePostion() {
         if (this.GetComponent<Rigidbody>().velocity.magnitude > 0.4f) {
-            if (this.GetComponent<Rigidbody>().velocity.magnitude / 10 > 0.3f) {
+            if (this.GetComponent<Rigidbody>().velocity.magnitude / 10 > 0.6f) {
                 currentAction = Action.Run;
             } else {
                 currentAction = Action.Walk;
@@ -131,12 +131,15 @@ public class PlayerMove : MonoBehaviour
 
     void RunEffect() {
         if (currentAction == Action.Run) {
-            //runParticle.SetActive(true);
-            runParticle.GetComponent<ParticleSystem>().emissionRate = 5;
+            runParticle.SetActive(true);
+            //runParticle.GetComponent<ParticleSystem>().Play();
+            runParticle.GetComponent<ParticleSystem>().maxParticles = 10;
+            //runParticle.GetComponent<ParticleSystem>().playbackSpeed = 10;
+            //runParticle.GetComponent<ParticleSystem>().emissionRate = 1;
         } else {
-            //runParticle.SetActive(false);
-            runParticle.GetComponent<ParticleSystem>().emissionRate = 0;
 
+            //runParticle.SetActive(false);
+            runParticle.GetComponent<ParticleSystem>().maxParticles = 0;
         }
     }
 }
