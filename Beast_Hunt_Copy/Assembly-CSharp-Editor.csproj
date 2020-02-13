@@ -113,6 +113,11 @@
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Editor\Utilities\StatsEd.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Editor\Utilities\TransformAnimationEditor.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Editor\Utilities\TriggerProxyEditor.cs" />
+    <Compile Include="Assets\TerrainGenerator\Scripts\Editor\GrassEditor.cs" />
+    <Compile Include="Assets\TerrainGenerator\Scripts\Editor\HeightsEditor.cs" />
+    <Compile Include="Assets\TerrainGenerator\Scripts\Editor\MapEditor.cs" />
+    <Compile Include="Assets\TerrainGenerator\Scripts\Editor\TexturesEditor.cs" />
+    <Compile Include="Assets\TerrainGenerator\Scripts\Editor\TreesEditor.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/k17014kk/Unity/Beast_Hunt_Git/Beast_Hunt_Copy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

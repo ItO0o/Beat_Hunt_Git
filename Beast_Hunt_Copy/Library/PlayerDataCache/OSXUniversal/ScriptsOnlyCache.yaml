@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - CameraPointerMove
     - EditFloor
     - EnemyMove
+    - Footprint
     - Ground
     - MalbersAnimations.Action
     - MalbersAnimations.Controller.AttackTriggerBehaviour
@@ -40,10 +41,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
@@ -97,76 +96,80 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9726}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9744}
+      Script: {instanceID: 9752}
     - Class: 114
-      Script: {instanceID: 9782}
-    - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9790}
     - Class: 114
       Script: {instanceID: 9834}
     - Class: 114
-      Script: {instanceID: 9922}
+      Script: {instanceID: 9846}
     - Class: 114
-      Script: {instanceID: 9976}
+      Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10030}
+      Script: {instanceID: 9990}
     - Class: 114
-      Script: {instanceID: 10034}
+      Script: {instanceID: 10044}
     - Class: 114
-      Script: {instanceID: 10060}
+      Script: {instanceID: 10048}
     - Class: 114
-      Script: {instanceID: 10068}
+      Script: {instanceID: 10074}
     - Class: 114
-      Script: {instanceID: 10204}
+      Script: {instanceID: 10082}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10218}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10314}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10340}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10400}
     - Class: 114
       Script: {instanceID: 10420}
     - Class: 114
-      Script: {instanceID: 10448}
+      Script: {instanceID: 10434}
     - Class: 114
       Script: {instanceID: 10462}
     - Class: 114
-      Script: {instanceID: 10504}
+      Script: {instanceID: 10476}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10554}
+      Script: {instanceID: 10536}
     - Class: 114
-      Script: {instanceID: 10572}
+      Script: {instanceID: 10568}
     - Class: 114
-      Script: {instanceID: 10794}
+      Script: {instanceID: 10586}
     - Class: 114
-      Script: {instanceID: 11026}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 11062}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 11106}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 11142}
+      Script: {instanceID: 11082}
     - Class: 114
-      Script: {instanceID: 11200}
+      Script: {instanceID: 11126}
     - Class: 114
-      Script: {instanceID: 11260}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11342}
+      Script: {instanceID: 11220}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11280}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11362}
     - Class: 114
-      Script: {instanceID: 11408}
+      Script: {instanceID: 11380}
+    - Class: 114
+      Script: {instanceID: 11412}
+    - Class: 114
+      Script: {instanceID: 11428}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 154
       Script: {instanceID: 0}
@@ -257,6 +260,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 3ecfb6c8bc5e70e054ff9a13197d442a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: IL3DN
+    className: IL3DN_ChangeWalkingSound
+  - hash:
+      serializedVersion: 2
+      Hash: ab74beea5793e9f79d701ebe4985ed58
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: IL3DN
+    className: IL3DN_SimpleFPSController
   - hash:
       serializedVersion: 2
       Hash: 1f67d061567b637ffc47c9aaffe42e71
@@ -811,6 +826,12 @@ ScriptsOnlyBuild:
     className: Fly
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: IL3DN
+    className: IL3DN_Wind
+  - hash:
+      serializedVersion: 2
       Hash: 92da9881aed190e8bb74661bcd74aa2c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -821,6 +842,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: MalbersAnimations.Scriptables
     className: BoolVar
+  - hash:
+      serializedVersion: 2
+      Hash: 3af1ae266478d3a9be34b3fd2cabb621
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Footprint
   - hash:
       serializedVersion: 2
       Hash: 9ef4db094fc2517ddda103a3a6117c26
